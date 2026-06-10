@@ -1,0 +1,102 @@
+name: Bug Report
+description: 报告程序错误、崩溃、安装失败或异常行为
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请简单说明你遇到的问题。
+      placeholder: 例如：打开首页后程序崩溃，或安装 MSIX 时提示证书不受信任。
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 当前版本
+      placeholder: RC1-1.0.02
+    validations:
+      required: true
+
+  - type: input
+    id: windows-version
+    attributes:
+      label: Windows 版本
+      placeholder: 例如：Windows 11 23H2 / Windows 10 22H2
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: 安装方式
+      options:
+        - GitHub Releases 下载 MSIX 后双击安装
+        - 从旧版本升级
+        - 重新安装
+        - 其他
+    validations:
+      required: true
+
+  - type: dropdown
+    id: upgraded
+    attributes:
+      label: 是否从旧版本升级
+      options:
+        - 否，全新安装
+        - 是，从旧版本升级
+        - 不确定
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 请按顺序写出如何触发问题。
+      placeholder: |
+        1. 打开应用
+        2. 点击……
+        3. 出现……
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+      description: 正常情况下你希望发生什么？
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 实际发生了什么？如果有错误提示，请尽量完整填写。
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots-logs
+    attributes:
+      label: 截图/日志
+      description: 可以拖入截图，或粘贴错误信息、安装错误码、日志片段。请不要上传包含隐私的数据。
+    validations:
+      required: false
+
+  - type: dropdown
+    id: backup-reproducible
+    attributes:
+      label: 数据是否可备份复现
+      description: 如果问题和本地数据有关，请说明是否能用备份数据复现。
+      options:
+        - 可以提供脱敏后的备份用于复现
+        - 可以复现，但不方便提供数据
+        - 暂时无法稳定复现
+        - 与数据无关
+        - 不确定
+    validations:
+      required: true
